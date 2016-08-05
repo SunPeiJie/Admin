@@ -1,0 +1,223 @@
+*** Starting uWSGI 2.0.13.1 (64bit) on [Thu May 26 14:25:37 2016] ***
+compiled with version: 5.3.1 20160413 on 13 May 2016 11:49:01
+os: Linux-4.4.0-21-generic #37-Ubuntu SMP Mon Apr 18 18:33:37 UTC 2016
+nodename: ubuntu
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 4
+current working directory: /mnt/hgfs/AdminLTE
+detected binary path: /usr/local/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+chdir() to /mnt/hgfs/AdminLTE/
+your processes number limit is 7796
+limiting address space of processes...
+your process address space limit is 268435456 bytes (256 MB)
+your memory page size is 4096 bytes
+ *** WARNING: you have enabled harakiri without post buffering. Slow upload could be rejected on post-unbuffered webservers *** 
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+error removing unix socket, unlink(): Permission denied [core/socket.c line 198]
+bind(): Address already in use [core/socket.c line 230]
+*** Starting uWSGI 2.0.13.1 (64bit) on [Thu May 26 14:27:13 2016] ***
+compiled with version: 5.3.1 20160413 on 13 May 2016 11:49:01
+os: Linux-4.4.0-21-generic #37-Ubuntu SMP Mon Apr 18 18:33:37 UTC 2016
+nodename: ubuntu
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 4
+current working directory: /mnt/hgfs/AdminLTE
+detected binary path: /usr/local/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+chdir() to /mnt/hgfs/AdminLTE/
+your processes number limit is 7796
+limiting address space of processes...
+your process address space limit is 268435456 bytes (256 MB)
+your memory page size is 4096 bytes
+ *** WARNING: you have enabled harakiri without post buffering. Slow upload could be rejected on post-unbuffered webservers *** 
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+error removing unix socket, unlink(): Is a directory [core/socket.c line 198]
+bind(): Address already in use [core/socket.c line 230]
+*** Starting uWSGI 2.0.13.1 (64bit) on [Thu May 26 14:30:20 2016] ***
+compiled with version: 5.3.1 20160413 on 13 May 2016 11:49:01
+os: Linux-4.4.0-21-generic #37-Ubuntu SMP Mon Apr 18 18:33:37 UTC 2016
+nodename: ubuntu
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 4
+current working directory: /mnt/hgfs/AdminLTE
+detected binary path: /usr/local/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+chdir() to /mnt/hgfs/AdminLTE/
+your processes number limit is 7796
+limiting address space of processes...
+your process address space limit is 268435456 bytes (256 MB)
+your memory page size is 4096 bytes
+ *** WARNING: you have enabled harakiri without post buffering. Slow upload could be rejected on post-unbuffered webservers *** 
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to UNIX address /test/myapp.sock fd 3
+Python version: 2.7.11+ (default, Apr 17 2016, 14:00:29)  [GCC 5.3.1 20160413]
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0xece600
+your server socket listen backlog is limited to 120 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 304296 bytes (297 KB) for 2 cores
+*** Operational MODE: preforking ***
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0xece600 pid: 2684 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 2684)
+spawned uWSGI worker 1 (pid: 2687, cores: 1)
+spawned uWSGI worker 2 (pid: 2688, cores: 1)
+[pid: 2687|app: 0|req: 1/1] 192.168.10.236 () {50 vars in 995 bytes} [Thu May 26 06:30:20 2016] POST /index/ => generated 2 bytes in 104 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 2688|app: 0|req: 1/2] 192.168.10.236 () {50 vars in 995 bytes} [Thu May 26 06:30:21 2016] POST /index/ => generated 2 bytes in 184 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 2688|app: 0|req: 2/3] 192.168.10.236 () {50 vars in 995 bytes} [Thu May 26 06:30:22 2016] POST /index/ => generated 2 bytes in 9 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 2688|app: 0|req: 3/4] 192.168.10.236 () {50 vars in 995 bytes} [Thu May 26 06:30:23 2016] POST /index/ => generated 2 bytes in 9 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 2688|app: 0|req: 4/5] 192.168.10.236 () {46 vars in 874 bytes} [Thu May 26 06:30:24 2016] GET /index/ => generated 56568 bytes in 49 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+['{"username": "test", "message": "24", "id": 95, "time": "Thu May 19 00:45:18 2016"}', '{"username": "test1", "message": "25", "id": 96, "time": "Thu May 19 00:45:25 2016"}', '{"username": "test1", "message": "26", "id": 97, "time": "Thu May 19 01:18:22 2016"}', '{"username": "test1", "message": "27", "id": 98, "time": "Thu May 19 01:20:08 2016"}', '{"username": "test", "message": "28", "id": 99, "time": "Thu May 26 02:35:03 2016"}', '{"username": "test", "message": "29", "id": 100, "time": "Thu May 26 02:35:10 2016"}', '{"username": "test", "message": "30", "id": 101, "time": "Thu May 26 02:35:16 2016"}', '{"username": "test", "message": "31", "id": 102, "time": "Thu May 26 02:36:03 2016"}', '{"username": "test1", "message": "32", "id": 103, "time": "Thu May 26 02:37:35 2016"}']
+[pid: 2688|app: 0|req: 5/6] 192.168.10.236 () {50 vars in 995 bytes} [Thu May 26 06:30:25 2016] POST /index/ => generated 773 bytes in 13 msecs (HTTP/1.1 200) 3 headers in 102 bytes (2 switches on core 0)
+[pid: 2688|app: 0|req: 6/7] 192.168.10.236 () {50 vars in 995 bytes} [Thu May 26 06:30:26 2016] POST /index/ => generated 2 bytes in 12 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 2688|app: 0|req: 7/8] 192.168.10.236 () {50 vars in 995 bytes} [Thu May 26 06:30:27 2016] POST /index/ => generated 2 bytes in 8 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 2688|app: 0|req: 8/9] 192.168.10.236 () {50 vars in 995 bytes} [Thu May 26 06:30:28 2016] POST /index/ => generated 2 bytes in 10 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 2688|app: 0|req: 9/10] 192.168.10.236 () {50 vars in 995 bytes} [Thu May 26 06:30:29 2016] POST /index/ => generated 2 bytes in 9 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 2688|app: 0|req: 10/11] 192.168.10.236 () {50 vars in 995 bytes} [Thu May 26 06:30:30 2016] POST /index/ => generated 2 bytes in 18 msecs (HTTP/1.1 200) 3 headers in 102 bytes (2 switches on core 0)
+[pid: 2687|app: 0|req: 2/12] 192.168.10.236 () {50 vars in 995 bytes} [Thu May 26 06:30:31 2016] POST /index/ => generated 2 bytes in 9 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 2688|app: 0|req: 11/13] 192.168.10.236 () {50 vars in 995 bytes} [Thu May 26 06:30:32 2016] POST /index/ => generated 2 bytes in 17 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 2687|app: 0|req: 3/14] 192.168.10.236 () {44 vars in 847 bytes} [Thu May 26 06:30:32 2016] GET /MediaInfo/ => generated 32967 bytes in 28 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 2688|app: 0|req: 12/15] 192.168.10.236 () {44 vars in 3174 bytes} [Thu May 26 06:30:32 2016] GET /server_side/?draw=1&columns%5B0%5D%5Bdata%5D=0&columns%5B0%5D%5Bname%5D=&columns%5B0%5D%5Bsearchable%5D=true&columns%5B0%5D%5Borderable%5D=true&columns%5B0%5D%5Bsearch%5D%5Bvalue%5D=&columns%5B0%5D%5Bsearch%5D%5Bregex%5D=false&columns%5B1%5D%5Bdata%5D=1&columns%5B1%5D%5Bname%5D=&columns%5B1%5D%5Bsearchable%5D=true&columns%5B1%5D%5Borderable%5D=true&columns%5B1%5D%5Bsearch%5D%5Bvalue%5D=&columns%5B1%5D%5Bsearch%5D%5Bregex%5D=false&columns%5B2%5D%5Bdata%5D=2&columns%5B2%5D%5Bname%5D=&columns%5B2%5D%5Bsearchable%5D=true&columns%5B2%5D%5Borderable%5D=true&columns%5B2%5D%5Bsearch%5D%5Bvalue%5D=&columns%5B2%5D%5Bsearch%5D%5Bregex%5D=false&columns%5B3%5D%5Bdata%5D=3&columns%5B3%5D%5Bname%5D=&columns%5B3%5D%5Bsearchable%5D=true&columns%5B3%5D%5Borderable%5D=true&columns%5B3%5D%5Bsearch%5D%5Bvalue%5D=&columns%5B3%5D%5Bsearch%5D%5Bregex%5D=false&columns%5B4%5D%5Bdata%5D=4&columns%5B4%5D%5Bname%5D=&columns%5B4%5D%5Bsearchable%5D=true&columns%5B4%5D%5Borderable%5D=true&columns%5B4%5D%5Bsearch%5D%5Bvalue%5D=&columns%5B4%5D%5Bsearch%5D%5Bregex%5D=false&order%5B0%5D%5Bcolumn%5D=0&order%5B0%5D%5Bdir%5D=asc&start=0&length=10&search%5Bvalue%5D=&search%5Bregex%5D=false&_=1464244240506 => generated 839 bytes in 239 msecs (HTTP/1.1 200) 2 headers in 88 bytes (1 switches on core 0)
+...brutally killing workers...
+worker 1 buried after 1 seconds
+worker 2 buried after 1 seconds
+binary reloading uWSGI...
+chdir() to /mnt/hgfs/AdminLTE
+closing all non-uwsgi socket fds > 2 (max_fd = 1024)...
+found fd 3 mapped to socket 0 (/test/myapp.sock)
+running /usr/local/bin/uwsgi
+[uWSGI] getting INI configuration from myapp_uwsgi.ini
+*** Starting uWSGI 2.0.13.1 (64bit) on [Thu May 26 06:39:46 2016] ***
+compiled with version: 5.3.1 20160413 on 13 May 2016 11:49:01
+os: Linux-4.4.0-21-generic #37-Ubuntu SMP Mon Apr 18 18:33:37 UTC 2016
+nodename: ubuntu
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 4
+current working directory: /mnt/hgfs/AdminLTE
+detected binary path: /usr/local/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+chdir() to /mnt/hgfs/AdminLTE/
+your processes number limit is 7796
+limiting address space of processes...
+your process address space limit is 268435456 bytes (256 MB)
+your memory page size is 4096 bytes
+ *** WARNING: you have enabled harakiri without post buffering. Slow upload could be rejected on post-unbuffered webservers *** 
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 inherited UNIX address /test/myapp.sock fd 3
+Python version: 2.7.11+ (default, Apr 17 2016, 14:00:29)  [GCC 5.3.1 20160413]
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x21cb3a0
+your server socket listen backlog is limited to 120 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 304296 bytes (297 KB) for 2 cores
+*** Operational MODE: preforking ***
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0x21cb3a0 pid: 2684 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+gracefully (RE)spawned uWSGI master process (pid: 2684)
+spawned uWSGI worker 1 (pid: 2696, cores: 1)
+spawned uWSGI worker 2 (pid: 2697, cores: 1)
+...brutally killing workers...
+worker 1 buried after 0 seconds
+worker 2 buried after 0 seconds
+binary reloading uWSGI...
+chdir() to /mnt/hgfs/AdminLTE
+closing all non-uwsgi socket fds > 2 (max_fd = 1024)...
+found fd 3 mapped to socket 0 (/test/myapp.sock)
+running /usr/local/bin/uwsgi
+[uWSGI] getting INI configuration from myapp_uwsgi.ini
+*** Starting uWSGI 2.0.13.1 (64bit) on [Thu May 26 06:43:58 2016] ***
+compiled with version: 5.3.1 20160413 on 13 May 2016 11:49:01
+os: Linux-4.4.0-21-generic #37-Ubuntu SMP Mon Apr 18 18:33:37 UTC 2016
+nodename: ubuntu
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 4
+current working directory: /mnt/hgfs/AdminLTE
+detected binary path: /usr/local/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+chdir() to /mnt/hgfs/AdminLTE/
+your processes number limit is 7796
+limiting address space of processes...
+your process address space limit is 268435456 bytes (256 MB)
+your memory page size is 4096 bytes
+ *** WARNING: you have enabled harakiri without post buffering. Slow upload could be rejected on post-unbuffered webservers *** 
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 inherited UNIX address /test/myapp.sock fd 3
+Python version: 2.7.11+ (default, Apr 17 2016, 14:00:29)  [GCC 5.3.1 20160413]
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x1e573a0
+your server socket listen backlog is limited to 120 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 304296 bytes (297 KB) for 2 cores
+*** Operational MODE: preforking ***
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0x1e573a0 pid: 2684 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+gracefully (RE)spawned uWSGI master process (pid: 2684)
+spawned uWSGI worker 1 (pid: 2719, cores: 1)
+spawned uWSGI worker 2 (pid: 2720, cores: 1)
+...brutally killing workers...
+worker 1 buried after 1 seconds
+worker 2 buried after 1 seconds
+binary reloading uWSGI...
+chdir() to /mnt/hgfs/AdminLTE
+closing all non-uwsgi socket fds > 2 (max_fd = 1024)...
+found fd 3 mapped to socket 0 (/test/myapp.sock)
+running /usr/local/bin/uwsgi
+[uWSGI] getting INI configuration from myapp_uwsgi.ini
+*** Starting uWSGI 2.0.13.1 (64bit) on [Thu May 26 06:46:27 2016] ***
+compiled with version: 5.3.1 20160413 on 13 May 2016 11:49:01
+os: Linux-4.4.0-21-generic #37-Ubuntu SMP Mon Apr 18 18:33:37 UTC 2016
+nodename: ubuntu
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 4
+current working directory: /mnt/hgfs/AdminLTE
+detected binary path: /usr/local/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+chdir() to /mnt/hgfs/AdminLTE/
+your processes number limit is 7796
+limiting address space of processes...
+your process address space limit is 268435456 bytes (256 MB)
+your memory page size is 4096 bytes
+ *** WARNING: you have enabled harakiri without post buffering. Slow upload could be rejected on post-unbuffered webservers *** 
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 inherited UNIX address /test/myapp.sock fd 3
+Python version: 2.7.11+ (default, Apr 17 2016, 14:00:29)  [GCC 5.3.1 20160413]
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x12e63a0
+your server socket listen backlog is limited to 120 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 304296 bytes (297 KB) for 2 cores
+*** Operational MODE: preforking ***
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0x12e63a0 pid: 2684 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+gracefully (RE)spawned uWSGI master process (pid: 2684)
+spawned uWSGI worker 1 (pid: 2730, cores: 1)
+spawned uWSGI worker 2 (pid: 2731, cores: 1)

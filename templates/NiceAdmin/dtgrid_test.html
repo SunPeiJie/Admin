@@ -1,0 +1,148 @@
+{% extends "NiceAdmin/base.html" %}
+{% block stylesheets %}
+    <!-- Bootstrap 3.3.5 -->
+    <link rel="stylesheet" href="/static/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/bootstrap/js/bootstrap.min.js">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="/static/css/font-awesome.min.css">
+    <!-- Ionicons -->
+    <link rel="stylesheet" href="/static/css/ionicons.min.css">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="/static/dist/css/AdminLTE.min.css">
+    <!-- AdminLTE Skins. Choose a skin from the css/skins
+         folder instead of downloading all of them to reduce the load. -->
+    <link rel="stylesheet" href="/static/dist/css/skins/_all-skins.min.css">
+
+
+    <!-- jQuery 2.1.4 -->
+    <script src="/static/plugins/jQuery/jQuery-2.1.4.min.js"></script>
+    <!-- jQuery UI 1.11.4 -->
+    <script src="/static/plugins/jQueryUI/jquery-ui.min.js"></script>
+    <!-- dtGrid -->
+    <script type="text/javascript" src="/static/dtgrid-master/jquery.dtGrid.js"></script>
+    <script type="text/javascript" src="/static/dtgrid-master/i18n/zh-cn.js"></script>
+    <link rel="stylesheet" type="text/css" href="/static/dtgrid-master/jquery.dtGrid.css" />
+
+    <!-- datePicker -->
+
+    <script type="text/javascript" src="/static/dtgrid-master/dependents/datePicker/WdatePicker.js" defer="defer"></script>
+    <link rel="stylesheet" type="text/css" href="/static/dtgrid-master/dependents/datePicker/skin/WdatePicker.css" />
+    <link rel="stylesheet" type="text/css" href="/static/dtgrid-master/dependents/datePicker/skin/default/datepicker.css" />
+
+{% endblock %}
+{% block content %}
+         <!-- Content Header (Page header) -->
+        <section class="content-header">
+          <h1>
+            视频数据
+          </h1>
+          <ol class="breadcrumb">
+            <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+            <li><a href="#">Tables</a></li>
+          </ol>
+        </section>
+
+        <!-- Main content -->
+        <section class="content">
+          <div class="row">
+            <div class="col-xs-12">
+                <div id="dtGridOption" class="dt-grid-container">
+        		<script type="text/javascript">
+                var sex = {1:'男', 2:'女'};
+                var degree = {1:'小学', 2:'初中', 3:'高中', 4:'中专', 5:'大学', 6:'硕士', 7:'博士', 8:'其他'};
+                //模拟数据（薪水在6000-12000之间，日期在1980-01-01 00::00:00到2014-10-01 00:00:00之间）
+                var datas = new Array();
+                for(var i=0; i<186; i++){
+                    var user = new Object();
+                    user.user_id = 'user_'+i;
+                    user.user_code = 'user_'+i;
+                    user.user_name = '模拟用户'+(Math.floor(Math.random()*1000)+10000)+'号';
+                    user.sex = (Math.floor(Math.random()*2)+1);
+                    user.salary = (Math.floor(Math.random()*6000)+6000);
+                    user.degree = (Math.floor(Math.random()*8)+1);
+                    user.time = new Date(Math.floor(Math.random()*1096588800000)+315504000000);
+                    user.time_stamp_s = Math.floor((Math.floor(Math.random()*1096588800000)+315504000000)/1000);
+                    user.time_stamp_ms = Math.floor(Math.random()*1096588800000)+315504000000;
+                    user.string_date = $.fn.DtGrid.tools.dateFormat(new Date(Math.floor(Math.random()*1096588800000)+315504000000), 'yyyy-MM-dd');
+                    user.string_time = $.fn.DtGrid.tools.dateFormat(new Date(Math.floor(Math.random()*1096588800000)+315504000000), 'yyyy-MM-dd hh:mm:ss');
+                    datas.push(user);
+                }
+				var dtGridColumns_2_1_1 = [
+			 		{id:'user_code', title:'用户编号', type:'string', columnClass:'text-center'},
+			 		{id:'user_name', title:'用户名称', type:'string', columnClass:'text-center'},
+			 		{id:'sex', title:'性别', type:'string', codeTable:sex, columnClass:'text-center'},
+			 		{id:'salary', title:'薪水', type:'number', format:'#,###.00', columnClass:'text-center'}
+			 	];
+                var dtGridColumns = [
+                    {id:'user_code', title:'用户编号', type:'string', columnClass:'text-center', fastQuery:true, fastQueryType:'eq'},
+                    {id:'user_name', title:'用户名称', type:'string', columnClass:'text-center', fastQuery:true, fastQueryType:'lk'},
+                    {id:'sex', title:'性别', type:'string', codeTable:sex, columnClass:'text-center', hideType:'xs', fastQuery:true, fastQueryType:'eq', resolution:function(record, value){
+                        var content = '';
+                        if(value==1){
+                            content += '<span style="background:#00a2ca;padding:2px 10px;color:white;">Male</span>';
+                        }else{
+                            content += '<span style="background:#c447ae;padding:2px 10px;color:white;">Female</span>';
+                        }
+                        return content;
+                    }},
+                    {id:'salary', title:'薪水', type:'number', format:'#,###.00', columnClass:'text-center', hideType:'xs', fastQuery:true, fastQueryType:'range'},
+                    {id:'degree', title:'学历', type:'string', codeTable:degree, columnClass:'text-center', hideType:'sm|xs', fastQuery:true, fastQueryType:'eq' },
+                    {id:'time', title:'日期对象', type:'date', format:'yyyy-MM-dd hh:mm:ss', columnClass:'text-center', hideType:'md|sm|xs', fastQuery:true, fastQueryType:'range' },
+                    {id:'time_stamp_s', title:'秒级时间戳', type:'date', format:'yyyy-MM-dd hh:mm:ss', otype:'time_stamp_s', columnClass:'text-center', hideType:'lg|md|sm|xs', fastQuery:true, fastQueryType:'range' },
+                    {id:'time_stamp_ms', title:'毫秒级时间戳', type:'date', format:'yyyy-MM-dd hh:mm:ss', otype:'time_stamp_ms', columnClass:'text-center', hideType:'lg|md|sm|xs', fastQuery:true, fastQueryType:'range' },
+                    {id:'string_date', title:'日期格式字符串', type:'date', format:'yyyy-MM-dd', otype:'string', oformat:'yyyy-MM-dd', columnClass:'text-center', hideType:'lg|md|sm|xs', fastQuery:true, fastQueryType:'range' },
+                    {id:'string_time', title:'时间格式字符串', type:'date', format:'yyyy-MM-dd hh:mm:ss', otype:'string', oformat:'yyyy-MM-dd hh:mm:ss', columnClass:'text-center', hideType:'lg|md|sm|xs', fastQuery:true, fastQueryType:'range' }
+                ];
+
+                var dtTestColumns = [
+                    {id:'ID', title:'ID', type:'string', columnClass:'text-center',fastQuery:true, fastQueryType:'eq'},
+                    {id:'Duration', title:'Duration', type:'number', columnClass:'text-center'},
+                    {id:'Width', title:'Width', type:'number', columnClass:'text-center', hideType:'xs'},
+                    {id:'Height', title:'Height', type:'number', columnClass:'text-center', hideType:'sm|xs'},
+                    {id:'FPS', title:'FPS', type:'number', columnClass:'text-center', hideType:'md|sm|xs'},
+                ];
+
+
+			 	var dtGridOption_2_1_1 = {
+			 		lang : 'zh-cn',
+			 		ajaxLoad : false,
+                    datas : datas,
+			 		exportFileName : '用户列表',
+			 		columns : dtGridColumns,
+			 		gridContainer : 'dtGridContainer_2_1_1',
+					toolbarContainer : 'dtGridToolBarContainer_2_1_1',
+					tools : 'refresh|faseQuery|advanceQuery|export[excel,csv,pdf,txt]|print',
+					pageSize : 10,
+					pageSizeLimit : [10, 20, 50]
+			 	};
+			 	var grid_2_1_1 = $.fn.DtGrid.init(dtGridOption_2_1_1);
+			 	$(function(){
+			 		grid_2_1_1.load();
+			 	});
+				</script>
+				<p><code>演示</code>：</p>
+				<div id="dtGridContainer_2_1_1" class="dt-grid-container"></div>
+				<div id="dtGridToolBarContainer_2_1_1" class="dt-grid-toolbar-container"></div>
+           </div>
+
+            </div><!-- /.col -->
+          </div><!-- /.row -->
+        </section><!-- /.content -->
+
+{% endblock %}
+
+
+{% block scripts %}
+
+
+    <!-- SlimScroll -->
+    <script src="/static/plugins/slimScroll/jquery.slimscroll.min.js"></script>
+    <!-- FastClick -->
+    <script src="/static/plugins/fastclick/fastclick.min.js"></script>
+    <!-- AdminLTE App -->
+    <script src="/static/dist/js/app.min.js"></script>
+
+    <script>
+
+    </script>
+{% endblock %}
